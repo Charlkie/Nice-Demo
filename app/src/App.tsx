@@ -5,9 +5,9 @@ import PageLayout from './components/layout/pagelayout'
 export default class App extends React.Component {
   public render() {
     return (
-      <div>
+      <div className='router'>
         <BrowserRouter>
-          <PageLayout />
+          <PageLayout/>
         </BrowserRouter>
       </div>
     );

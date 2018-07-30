@@ -14,7 +14,6 @@ export default class Navigation extends Component {
 
     public consoleWhenUpTop = () => this.setState({ style: window.scrollY === 0 ? 'fade' : '' })
 
-
     public render() {
         return (
             <Container>
