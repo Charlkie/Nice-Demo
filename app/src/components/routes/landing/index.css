@@ -1,0 +1,66 @@
+.header {
+    text-align: center;
+    min-height: 75vh !important;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: cenetr;
+    background: linear-gradient(270deg, #2ac5b8, #722ac5, #722ac5);
+    background-size: 600% 600%;
+    -webkit-animation: gradientAnimation 60s ease infinite;
+    animation: gradientAnimation 60s ease infinite
+}
+
+@-webkit-keyframes gradientAnimation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes gradientAnimation { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+h1 {
+    font-size: 3.65em
+}
+
+.button {
+    box-shadow: 0 0 0 1px rgb(255, 255, 255) inset !important
+}
+
+.button:hover {
+    color: rgb(0,0,0) !important
+}
+
+.header h1, .header h2 {
+    color: white !important
+}
+
+.ui.basic.button {
+    color: white !important
+}
+
+@media only screen and (max-width: 765px) {
+    img.responsive {
+        width: 80vw !important;
+    }
+    h1 {
+        font-size: 30px !important;
+    }
+    h2 {
+        font-size: 15px !important;
+    }
+    .footer {
+        text-align: center !important;
+        margin: auto !important;
+    }
+    .first {
+        padding-top: 5vh !important
+    }
+    .second {
+        padding-top: 5vh !important
+    }
+}
