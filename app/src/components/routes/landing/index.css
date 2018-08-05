@@ -1,71 +1,194 @@
-.header {
-    width: 100%;
-    text-align: center;
-    min-height: 75vh !important;
-    height: 75vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: cenetr;
-    background: linear-gradient(270deg, #2ac5b8, #722ac5, #722ac5);
-    background-size: 800% 800%;
-    -webkit-animation: gradientAnimation 60s ease infinite;
-    animation: gradientAnimation 60s ease infinite
+.landing-header {
+	width: 100%;
+	text-align: center;
+	min-height: 75vh !important;
+	height: 75vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(270deg, #2ac5b8, #722ac5, #722ac5);
+	background-size: 800% 800%;
+	-webkit-animation: gradientAnimation 60s ease infinite;
+	animation: gradientAnimation 60s ease infinite
 }
 
-.content {
-    width: 100% !important
+.typewriter-contain {
+	padding-bottom: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.type-contain {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center
+}
+
+.typewriter {
+	font-size: 2.5em;
+	border-right: .15em solid orange;
+}
+
+.blinking {
+	animation: blink-caret .75s step-end infinite;
+}
+
+@keyframes blink-caret {
+	from,
+	to {
+		border-color: transparent
+	}
+	50% {
+		border-color: orange;
+	}
 }
 
 @-webkit-keyframes gradientAnimation {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
 }
-@keyframes gradientAnimation { 
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+
+@keyframes gradientAnimation {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
 }
 
 h1 {
-    font-size: 3.65em
+	font-size: 3.65em
 }
 
 .button {
-    box-shadow: 0 0 0 1px rgb(255, 255, 255) inset !important
+	box-shadow: 0 0 0 1px rgb(255, 255, 255) inset !important
 }
 
 .button:hover {
-    color: rgb(0,0,0) !important
+	color: rgb(0, 0, 0) !important
 }
 
-.header h1, .header h2 {
-    color: white !important
+.landing-header h1,
+.landing-header h2 {
+	color: white !important
 }
 
 .ui.basic.button {
-    color: white !important
+	color: white !important
 }
 
 @media only screen and (max-width: 765px) {
-    img.responsive {
-        width: 80vw !important;
-    }
-    h1 {
-        font-size: 30px !important;
-    }
-    h2 {
-        font-size: 15px !important;
-    }
-    .footer {
-        text-align: center !important;
-        margin: auto !important;
-    }
-    .first {
-        padding-top: 5vh !important
-    }
-    .second {
-        padding-top: 5vh !important
-    }
+	img.responsive {
+		width: 80vw !important;
+	}
+	h1 {
+		font-size: 30px !important;
+	}
+	h2 {
+		font-size: 15px !important;
+	}
+	.footer {
+		text-align: center !important;
+		margin: auto !important;
+	}
+	.first {
+		padding-top: 5vh !important
+	}
+	.second {
+		padding-top: 0 !important
+	}
+}
+
+.code {
+	background: #2d2a2e;
+	overflow: auto;
+	width: 380px;
+	border: solid #231f22;
+	border-radius: 5px;
+	padding: .2em .6em;
+	text-align: left;
+	padding: 20px;
+}
+
+.email {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: rgb(250, 250, 250);
+	padding: 50px;
+	margin: 40px 0;
+}
+
+.email-contain {
+	padding: 0 100px !important;
+}
+
+@media only screen and (max-width: 500px) {
+	.code {
+		width: 90%;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.typewriter {
+		font-size: 2rem;
+	}
+}
+
+.code pre {
+	margin: 0;
+	line-height: 125%
+}
+
+.code span {
+	color: #78dce8;
+	font-weight: bold
+}
+
+span.pink {
+	color: #ed5c86
+}
+
+span.orange {
+	color: #f39766
+}
+
+span.yellow {
+	color: #fcd865
+}
+
+span.green {
+	color: #a9dc76
+}
+
+span.blue {
+	color: #78dce8
+}
+
+span.purple {
+	color: #ab9df2
+}
+
+span.gray {
+	color: #929192
 }

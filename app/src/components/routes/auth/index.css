@@ -1,32 +1,68 @@
 .form-container {
-    margin: auto;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+	margin: auto;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.incorrect {
+	position: absolute;
+	color: red;
 }
 
 .form-grid {
-    margin: auto;
-    margin-top: 75px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+	margin: auto;
+	margin-top: 75px;
+}
+
+.flash input{
+	border-color: red !important;
+	background-color: red;
+	color: red
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
 
 .form {
-    padding: 50px 30px;
-    min-width: 400px;
-    width: 400px;
-    border: 2px solid rgba(0,0,0,.1);
-    border-radius: 5px;
+	padding: 40px 30px;
+	min-width: 400px;
+	width: 400px;
+	border: 2px solid rgba(0,0,0,.1);
+	border-radius: 5px;
+	text-align: left;
+}
+
+.input {
+	margin: 0 0 10px 0;
+}
+
+.form .button {
+	margin: 10px 0 0 0;
+	width: 100%;
+}
+
+.label {
+	position: absolute !important;
+	z-index: 999;
+	left: 200px;
+	transform: translateY(115%)
+}
+
+.error {
+	border-color: red
 }
 
 @media only screen and (max-width: 765px) {
-    .form {
-        min-width: 300px !important;
-        width: 300px !important
-    }
+	.form {
+		min-width: 300px !important;
+		width: 300px !important
+	}
 }
