@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Button, Container, Divider, Grid } from 'semantic-ui-react';
 
 export default class Footer extends Component {
@@ -8,13 +8,13 @@ export default class Footer extends Component {
 		colOne: ['React', 'is the best', 'javascript', 'framework'],
 		colTwo: ['React', 'is the best', 'javascript', 'framework']
 	}
-	
+
 	public render() {
 		return (
 			<Container className='footer-contain' textAlign='center'>
-				<Grid className='footer' stackable={true} style={{ paddingTop: '20px' }}>   
-					<Links links={this.state.colOne} title='Javascript'/> 
-					<Links links={this.state.colTwo} title='Python'/>                 
+				<Grid className='footer' stackable={true} style={{ paddingTop: '20px' }}>
+					<Links links={this.state.colOne} title='Javascript'/>
+					<Links links={this.state.colTwo} title='Python'/>
 					<Grid.Column width={7} floated='right'>
 					<ul>
 						<h4>Support me</h4>
@@ -26,19 +26,17 @@ export default class Footer extends Component {
 					</Grid.Column>
 				</Grid>
 				<Divider />
-				<img 
-					src="https://www.contactcenterworld.com/images/company/NICE-Systems-1200px-logo.png" 
-					alt="Nice"
-					style={{ 
-							height: '20px',
-							marginTop: '10px'
-						   }}
-				/>
-				<h4 style={{ marginTop: '5px', marginBottom: '30px' }}>Content for inContact, Copywright © 2013-2015 | All rights reserved.</h4>
+				<CopyRight />
 			</Container>
 		)
 	}
 }
+
+export const MinFooter = () => (
+	<Container className='footer-contain' textAlign='center'>
+		<CopyRight />
+	</Container>
+)
 
 const Links: React.SFC<{ links: string[], title:string }> = (props) => (
 	<Grid.Column width={3} className="footer-links">
@@ -49,4 +47,14 @@ const Links: React.SFC<{ links: string[], title:string }> = (props) => (
 			)}
 		</ul>
 	</Grid.Column>
+)
+
+const CopyRight = () => (
+	<Fragment>
+		<img
+			src="https://www.contactcenterworld.com/images/company/NICE-Systems-1200px-logo.png"
+			alt="Nice"
+		/>
+		<h4 style={{ marginTop: '5px', marginBottom: '30px' }}>Content for inContact, Copywright © 2013-2015 | All rights reserved.</h4>
+	</Fragment>
 )

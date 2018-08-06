@@ -69,7 +69,6 @@ class Email extends Component {
 	}
 
 	public sendMail = async (e: any) => {
-		console.log('Bills a bitch')
 		const emailSent = await fetch('http://127.0.0.1:5000/', {
 			body: JSON.stringify({
 				email: this.state.email

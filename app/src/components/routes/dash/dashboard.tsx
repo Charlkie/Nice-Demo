@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import { Line } from 'react-chartjs-2';
 import { Redirect } from 'react-router-dom';
-import { Card } from 'semantic-ui-react'
+import { Card, Divider } from 'semantic-ui-react';
 import AppContext from '../../../contexts/AppContext';
-import './index.css'
+import data from './analytics';
+import './index.css';
 
 class Dashboard extends Component<{token: any}> {
 
@@ -42,61 +44,61 @@ class Dashboard extends Component<{token: any}> {
 }
 
 const Dash = () => (
-	<div className='ui form-container container dash'>
-		<h1>Dashboard</h1>
-		<CardExampleHeaderCard />
-	</div>
+	<Fragment>
+		<div className='ui form-container container dash'>
+			<CardExampleHeaderCard />
+			<Analytics />
+		</div>
+		<Divider />
+	</Fragment>
 )
-
-
 
 const CardExampleHeaderCard = () => (
 	<div className='row'>
-		<Card.Group>
-		<Card>
-			<Card.Content>
-			<Card.Header>Matthew Harris</Card.Header>
-			<Card.Meta>Co-Worker</Card.Meta>
-			<Card.Description>Matthew is a pianist living in Nashville.</Card.Description>
-			</Card.Content>
-		</Card>
-		<Card>
-			<Card.Content>
-			<Card.Header content='Jake Smith' />
-			<Card.Meta content='Musicians' />
-			<Card.Description content='Jake is a drummer living in New York.' />
-			</Card.Content>
-		</Card>
-		<Card>
-			<Card.Content
-			header='Elliot Baker'
-			meta='Friend'
-			description='Elliot is a music producer living in Chicago.'
+		<Card.Group style={{paddingBottom: '50px'}}>
+			<Card
+				header='Hear Our Voice'
+				meta='api1'
+				description='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum quidem!'
 			/>
-		</Card>
-		<Card
-			header='Jenny Hess'
-			meta='Friend'
-			description='Jenny is a student studying Media Management at the New School'
-		/>
-		<Card
-			header='Jenny Hess'
-			meta='Friend'
-			description='Jenny is a student studying Media Management at the New School'
-		/>
-		<Card
-			header='Jenny Hess'
-			meta='Friend'
-			description='Jenny is a student studying Media Management at the New School'
-		/>
+			<Card
+				header='Interact Instantly'
+				meta='api2'
+				description='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum quidem!'
+			/>
+			<Card
+				header='Engage Electronically'
+				meta='api3'
+				description='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum quidem!'
+			/>
+			<Card
+				header='Impressively Intuitive IVR'
+				meta='api3'
+				description='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum quidem!'
+			/>
+			<Card
+				header='Texters Rejoice'
+				meta='api5'
+				description='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum quidem!'
+			/>
 		</Card.Group>
 	</div>
   )
 
-
+const Analytics = () => (
+<Line
+	data={data}
+	width={80}
+	height={20}
+	options={{
+		maintainAspectRatio: true
+	}}
+/>
+)
 
 export default (props: any) => (
 	<AppContext.Consumer>
 		{ value => <Dashboard token={value.token} /> }
 	</AppContext.Consumer>
 )
+

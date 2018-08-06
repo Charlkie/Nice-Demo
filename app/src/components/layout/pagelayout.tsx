@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import Routes from '../routes';
-import Footer from './footer';
+import Footer, { MinFooter } from './footer';
 import './index.css';
 import Navigation from './navigation';
 
@@ -9,13 +9,19 @@ class PageLayout extends Component<{ location: any }> {
 	public render() {
 
 		const { location } = this.props
-
+		console.log("LOCATION: ", location)
 		return (
 			<div className='content-contain'>
-				<Navigation className={(location.pathname === '/' ? '' : ' landing' )}/>
+				<Navigation location={location.pathname}/>
 				<div className='content'>
 					<Routes />
-					<Footer />
+					{ location.pathname === '/dashboard' ? (
+						<MinFooter />
+					) :
+					(
+						<Footer />
+					)
+					}
 				</div>
 			</div>
 		)
